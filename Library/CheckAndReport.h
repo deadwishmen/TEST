@@ -1,5 +1,5 @@
 #ifndef _CHECKANDREPORT_
-#define _CHECKANHREPORT_
+#define _CHECKANDREPORT_
 #include "orders.h"
 #include "goods.h"
 #include "GoodManagement.h"
