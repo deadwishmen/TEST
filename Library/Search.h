@@ -46,10 +46,12 @@ nhaplai:
 				}
 			}
 			bangsanpham(0, 5, 3 + k);
-			int h = keyboard();
-			if (h == 4) {
-				system("cls");
-				break;
+			for (;;) {
+				int h = keyboard();
+				if (h == 4) {
+					system("cls");
+					return;
+				}
 			}
 		}
 	}
