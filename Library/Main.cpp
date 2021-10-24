@@ -10,17 +10,17 @@ class Goods {
 protected:
 	vector<goods> hh;
 public:
-	vector<goods> &getHH() {
+	vector<goods>& getHH() {
 		return hh;
 	}
 	void goodManagement() {
-		GOODS_MANAGEMENT(hh);//
+		GOODS_MANAGEMENT(hh);
 	}
 	void Display() {
-		
+		HT(hh);
 	}
 	void Search() {
-
+		TK(hh);
 	}
 	bool input() {
 		return Input(hh);
@@ -31,7 +31,7 @@ class Orders {
 protected:
 	vector< vector <orders> > dh;
 public:
-	void orderProcessing(Goods &g) {
+	void orderProcessing(Goods& g) {
 		ORDERS_PROCESSING(dh, g.getHH());
 	}
 	void checkAndReport(Goods g) {
@@ -39,17 +39,18 @@ public:
 	}
 };
 
-void Menu(Goods g);
+void Menu(Goods g, Orders od);
 
 int main() {
 	Goods a;
+	Orders od;
 	if (a.input()) {
-		Menu(a);
+		Menu(a,od);
 	}
 	return 0;
 }
 
-void Menu(Goods g) {
+void Menu(Goods g, Orders od) {
 	khung(30, 1, 67, 2, 14);
 	khung(30, 3, 67, 17, 14);
 	vietchuoi(30 + 20, 1 + 1, "CHUONG TRINH QUAN LY BAN HANG", 228);
@@ -151,13 +152,18 @@ void Menu(Goods g) {
 			if (kt == 1) {
 				system("cls");
 				g.Display();
-				Menu(g);
+				Menu(g,od);
 			}
 			else if (kt == 2) {
 				system("cls");
 				g.Search();
-				Menu(g);
+				Menu(g,od);
 			}// them chuc nang tu the
+			else if (kt == 3) {
+				system("cls");
+				od.checkAndReport(g);
+				Menu(g,od);
+			}
 			else if (kt == 5) {
 				system("cls");
 				cout << "Dang thoat chuong trinh..." << endl;
