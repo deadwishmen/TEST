@@ -7,6 +7,11 @@ using namespace std;
 	
 void HT(vector<goods> hh) {
 	int n = hh.size() + 3;
+	if (!hh.empty() && hh.size()<=1) {
+		vietchuoi(50, 1, "[Hien Tai Chua Co Hang Hoa]", 12);
+		Sleep(1500);
+		return;
+	}
 	vietchuoi(50, 1, "Nhan [ESC] de tro ve ", 12);
 	bangsanpham(0, 2, n);
 	for (int i = 0; i < hh.size(); i++) {
