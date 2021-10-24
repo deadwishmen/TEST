@@ -24,6 +24,7 @@ void viet(int x, int y, int z);
 int tksanpham(vector <goods> hanghoa, string s);
 void khung(int x, int y, int m, int n, int mau);
 void bangsanpham(int x, int y, int sl);
+void TableOrder(int x, int y, int sl);
 int keyboard();
 int keyboard() {
 	int k = _getch();
@@ -141,6 +142,48 @@ void bangsanpham(int x, int y, int sl)
 	vietchuoi(x + 73, y + 1, "Gia Ban", 11);
 	vietchuoi(x + 87, y + 1, "Ngay nhap kho", 11);
 	vietchuoi(x + 106, y + 1, "So luong", 11);
+	//		vietchuoi(x+105,y+1,"Thanh tien",11);
+}
+void TableOrder(int x, int y, int sl)
+{
+	int i, j;
+	textcolor(2);
+	for (i = x; i <= x + 117; i++)
+		for (j = y; j <= y + sl; j++)
+		{
+			if (i == x || i == x + 4 || i == x + 15 || i == x + 25 || i == x + 45 || i == x + 72 || i == x + 86 || i == x + 104 || i == x + 117)
+			{
+				if (j == y && i != x && i != x + 117)
+					viet(i, j, 45);
+				else if (j == y && i != x + 117)
+					viet(i, j, 45);
+				else if (j == y && i != x)
+					viet(i, j, 45);
+				else if (j == y + 2 && i != x && i != x + 117)
+					viet(i, j, 45);
+				else if (j == y + 2 && i != x + 117)
+					viet(i, j, 45);
+				else if (j == y + 2 && i != x)
+					viet(i, j, 45);
+				else if (j == y + sl && i != x && i != x + 117)
+					viet(i, j, 45);
+				else if (j == y + sl && i != x + 117)
+					viet(i, j, 45);
+				else if (j == y + sl && i != x)
+					viet(i, j, 45);
+				else viet(i, j, 124);
+			}
+			else if (j == y || j == y + 2 || j == y + sl)
+				viet(i, j, 45);
+		}
+	vietchuoi(x + 1, y + 1, "STT", 11);
+	vietchuoi(x + 6, y + 1, "Ma Hang", 11);
+	vietchuoi(x + 16, y + 1, "So Luong", 11);
+	vietchuoi(x + 28, y + 1, "Ten Khach Hang", 11);
+	vietchuoi(x + 50, y + 1, "Dia Chi Khach Hang", 11);
+	vietchuoi(x + 78, y + 1, "SDT", 11);
+	vietchuoi(x + 89, y + 1, "Ngay Dat Hang", 11);
+	vietchuoi(x + 106, y + 1, "Tong Tien", 11);
 	//		vietchuoi(x+105,y+1,"Thanh tien",11);
 }
 
