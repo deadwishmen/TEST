@@ -1,1 +1,28 @@
-sdvsvs
+VNXX
+Xuc Xich
+Viet Nam
+Do
+10000
+11 12 2021 
+100
+CNMT
+Milk Tea
+Trung Quoc
+Xanh
+15000
+15 12 2021 
+100
+HNDH
+Banh Trung Thu
+VN
+Vang
+45000
+24 10 2021 
+500
+PAAA
+Pin AAA
+VN
+Do
+3000
+25 10 2021 
+500
