@@ -119,8 +119,9 @@ void LOGIN(vector<goods>& hh, vector< vector <orders> >& dh)
 				}
 
 			}
-			cout << endl;
-
+			vietchuoi(20, 7, "[ESC] Quay Lai ", 12);
+			vietchuoi(35, 7, "|", 14);
+			vietchuoi(36, 7, " [ENTER] Dang Nhap", 2);
 			string ider, passer;
 
 			int h = keyboard();
@@ -128,6 +129,7 @@ void LOGIN(vector<goods>& hh, vector< vector <orders> >& dh)
 				system("cls");
 				return;
 			}
+
 			while (!is.eof())
 			{
 				is >> ider >> passer;
