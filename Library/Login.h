@@ -119,8 +119,9 @@ void LOGIN(vector<goods>& hh, vector< vector <orders> >& dh)
 				}
 
 			}
-			cout << endl;
-
+			vietchuoi(20, 7, "[ESC] Quay Lai ", 12);
+			vietchuoi(35, 7, "|", 14);
+			vietchuoi(36, 7, " [ENTER] Dang Nhap", 2);
 			string ider, passer;
 
 			int h = keyboard();
@@ -128,11 +129,12 @@ void LOGIN(vector<goods>& hh, vector< vector <orders> >& dh)
 				system("cls");
 				return;
 			}
+
 			while (!is.eof())
 			{
 				is >> ider >> passer;
 				if (id == ider && pass == passer) {
-					vietchuoi(20, 7, "Dang Nhap Thanh Cong", 10);
+					vietchuoi(20, 9, "Dang Nhap Thanh Cong !", 10);
 					Sleep(1000);
 					system("cls");
 					chose(hh, dh);
@@ -141,7 +143,7 @@ void LOGIN(vector<goods>& hh, vector< vector <orders> >& dh)
 
 			}
 			tmp++;
-			vietchuoi(20, 7, "Sai User Hoac PassWord! Vui Long Nhap Lai !", 12);
+			vietchuoi(20, 9, "Sai User Hoac PassWord! Vui Long Nhap Lai !", 12);
 			Sleep(1000);
 			system("cls");
 
@@ -149,7 +151,7 @@ void LOGIN(vector<goods>& hh, vector< vector <orders> >& dh)
 
 		if (tmp == 3)
 		{
-			vietchuoi(20, 7, "Ban da nhap sai qua 3 lan!", 12);
+			vietchuoi(20, 9, "Ban Da Nhap Sai Qua 3 Lan!", 12);
 			Sleep(1000);
 			exit(0);
 		}
