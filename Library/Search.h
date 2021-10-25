@@ -19,7 +19,9 @@ nhaplai:
 			break;
 		}
 		else {
-			getline(cin, s);
+			vietchuoi(112 - 20, 4, "                       ", 12);
+			gotoxy(12 + vitriTK, 1); getline(cin, s);
+			textcolor(14);
 		}
 		int tam = tksanpham(hh, s);
 		if (tam == -1) {
