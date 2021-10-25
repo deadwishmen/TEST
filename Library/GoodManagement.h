@@ -147,7 +147,11 @@ void GOODS_MANAGEMENT(vector<goods>& hh) {
 
 		}
 		else if (k == 3) {
-			if (ck == 1) {
+			if (ck == 4) {
+				system("cls");
+				goto end;
+			}
+			else if (ck == 1) {
 				goods add;
 				cinSeri:
 				system("cls");
@@ -171,7 +175,6 @@ void GOODS_MANAGEMENT(vector<goods>& hh) {
 				addGoods(hh, add);
 				vietchuoi(40, 6, "Da Them Hang Hoa !", 10);
 				Sleep(1000);
-
 			}
 			else if (ck == 2) {
 				system("cls");
@@ -201,16 +204,13 @@ void GOODS_MANAGEMENT(vector<goods>& hh) {
 				Sleep(1200);
 				updateGoods(hh);
 			}
-			else if (ck == 4) {
-				system("cls");
-
-				exit(0);
-
-			}
-			system("cls");
-			GOODS_MANAGEMENT(hh);
+			goto tieptuc;
 		}
 	}
+	tieptuc:
+	system("cls");
+	GOODS_MANAGEMENT(hh);
+	end:;
 }
 
 #endif
