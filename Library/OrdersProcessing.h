@@ -24,9 +24,10 @@ void getData(vector< vector<orders> >& _dh) {
 		check = true;
 		add.push_back(o);
 	}
-	_dh.push_back(add);
+
 
 	end:;
+	if(add.size() != 0)_dh.push_back(add);
 	input.close();
 }
 
