@@ -2,7 +2,8 @@
 #include"OrdersProcessing.h"
 #include"Search.h"
 #include"Display.h"
-#include "CheckAndReport.h"
+#include"CheckAndReport.h"
+#include"Login.h"
 
 using namespace std;
 
@@ -31,6 +32,9 @@ class Orders {
 protected:
 	vector< vector <orders> > dh;
 public:
+	vector< vector <orders> >& getDH() {
+		return dh;
+	}
 	void orderProcessing(Goods& g) {
 		ORDERS_PROCESSING(dh, g.getHH());
 	}
@@ -45,7 +49,7 @@ int main() {
 	Goods a;
 	Orders od;
 	if (a.input()) {
-		Menu(a,od);
+		Menu(a, od);
 	}
 	return 0;
 }
@@ -56,7 +60,7 @@ void Menu(Goods g, Orders od) {
 	vietchuoi(30 + 20, 1 + 1, "CHUONG TRINH QUAN LY BAN HANG", 228);
 	int kt = 1;
 	int x = 0, y = 0;
-	khung(x + 40, y + 5, 40, 2, 14);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 15);
+	khung(x + 40, y + 5, 40, 2, 14);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 15);
 	khung(x + 40, y + 5 + 3, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 6);
 	khung(x + 40, y + 5 + 6, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 6);
 	khung(x + 40, y + 5 + 9, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 6);
@@ -75,7 +79,7 @@ void Menu(Goods g, Orders od) {
 			}
 			else if (kt == 2) {
 				kt = 3;
-				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 6);
+				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 3, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 6, 40, 2, 14);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 15);
 				khung(x + 40, y + 5 + 9, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 6);
@@ -83,7 +87,7 @@ void Menu(Goods g, Orders od) {
 			}
 			else if (kt == 3) {
 				kt = 4;
-				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 6);
+				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 3, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 6, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 6);
 				khung(x + 40, y + 5 + 9, 40, 2, 14);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 15);
@@ -91,7 +95,7 @@ void Menu(Goods g, Orders od) {
 			}
 			else if (kt == 4) {
 				kt = 5;
-				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 6);
+				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 3, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 6, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 6);
 				khung(x + 40, y + 5 + 9, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 6);
@@ -99,7 +103,7 @@ void Menu(Goods g, Orders od) {
 			}
 			else if (kt == 5) {
 				kt = 1;
-				khung(x + 40, y + 5, 40, 2, 14);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 15);
+				khung(x + 40, y + 5, 40, 2, 14);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 15);
 				khung(x + 40, y + 5 + 3, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 6, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 6);
 				khung(x + 40, y + 5 + 9, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 6);
@@ -109,7 +113,7 @@ void Menu(Goods g, Orders od) {
 		else if (k == 1) {
 			if (kt == 1) {
 				kt = 5;
-				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 6);
+				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 3, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 6, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 6);
 				khung(x + 40, y + 5 + 9, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 6);
@@ -117,7 +121,7 @@ void Menu(Goods g, Orders od) {
 			}
 			else if (kt == 5) {
 				kt = 4;
-				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 6);
+				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 3, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 6, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 6);
 				khung(x + 40, y + 5 + 9, 40, 2, 14);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 15);
@@ -125,7 +129,7 @@ void Menu(Goods g, Orders od) {
 			}
 			else if (kt == 4) {
 				kt = 3;
-				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 6);
+				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 3, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 6, 40, 2, 14);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 15);
 				khung(x + 40, y + 5 + 9, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 6);
@@ -133,7 +137,7 @@ void Menu(Goods g, Orders od) {
 			}
 			else if (kt == 3) {
 				kt = 2;
-				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 6);
+				khung(x + 40, y + 5, 40, 2, 0);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 3, 40, 2, 14);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 15);
 				khung(x + 40, y + 5 + 6, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 6);
 				khung(x + 40, y + 5 + 9, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 6);
@@ -141,7 +145,7 @@ void Menu(Goods g, Orders od) {
 			}
 			else if (kt == 2) {
 				kt = 1;
-				khung(x + 40, y + 5, 40, 2, 14);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANH HOA", 15);
+				khung(x + 40, y + 5, 40, 2, 14);	vietchuoi(x + 41, y + 6, "HIEN THI THONG TIN HANG HOA", 15);
 				khung(x + 40, y + 5 + 3, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 3, "TIM KIEM THONG TIN HANG HOA", 6);
 				khung(x + 40, y + 5 + 6, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 6, "DAT HANG", 6);
 				khung(x + 40, y + 5 + 9, 40, 2, 0);	vietchuoi(x + 41, y + 6 + 9, "QUAN LY", 6);
@@ -152,17 +156,22 @@ void Menu(Goods g, Orders od) {
 			if (kt == 1) {
 				system("cls");
 				g.Display();
-				Menu(g,od);
+				Menu(g, od);
 			}
 			else if (kt == 2) {
 				system("cls");
 				g.Search();
-				Menu(g,od);
-			}// them chuc nang tu the
+				Menu(g, od);
+			}
 			else if (kt == 3) {
 				system("cls");
 				od.checkAndReport(g);
-				Menu(g,od);
+				Menu(g, od);
+			}
+			else if (kt == 4) {
+				system("cls");
+				LOGIN(g.getHH(), od.getDH());
+				Menu(g, od);
 			}
 			else if (kt == 5) {
 				system("cls");
