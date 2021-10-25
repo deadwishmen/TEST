@@ -3,25 +3,30 @@
 
 #include"orders.h"
 #include"GoodManagement.h"
-
 using namespace std;
 
 void getData(vector< vector<orders> >& _dh) {
+	_dh.clear();
 	ifstream input;
 	input.open("DonHang.txt");
 
 	vector<orders> add;
-	while (!input.eof()) {
+	bool check = false;
+
+	while (!input.eof()) { // chay tu dau toi cuoi file
 		orders o;
 		input >> o;
-		if (o.number == 1) {
-			if (add.size() != 0) _dh.push_back(add);
+		if (o.seri == "") goto end; // Kiem tra xem file co rong~ khong
+		if (o.number == 1 && check) {
+			_dh.push_back(add);
 			add.clear();
 		}
+		check = true;
 		add.push_back(o);
 	}
 	_dh.push_back(add);
 
+	end:;
 	input.close();
 }
 
@@ -52,27 +57,32 @@ void process(vector< vector <orders> >& dh, vector<goods>& hh) {
 		for (int j = 0; j < hh.size(); j++) {
 			if (dh[0][i].seri == hh[j].seri) {
 				hh[j].amount = hh[j].amount - dh[0][i].amount;
-				break;
+				goto out;
 			}
 		}
+		out:;
 	}
 	dh.erase(dh.begin());
 }
 
 void ORDERS_PROCESSING(vector< vector <orders> >& dh, vector<goods>& hh) {
 	int count = 1;
-
-	dh.clear();
+	bool check = false;
 	getData(dh);
-	
+	cout << "Co " << dh.size() << " Don Dat Hang\n";
 	while (dh.size() != 0) {
+		getData(dh);
+		check = true;
 		process(dh, hh);
 		updateGoods(hh);
 		updateFileOrders(dh);
 		cout << "Xu Ly Xong Don Hang Thu " << count << endl;
 		count++;
 	}
-	cout << "Don Hang Xu Ly Thanh Cong !";
+	if(check) cout << "Don Hang Xu Ly Thanh Cong !";
+	else cout << "Hien tai khong co Don Hang nao !";
+	Sleep(1000);
+	system("cls");
 }
 
 #endif
