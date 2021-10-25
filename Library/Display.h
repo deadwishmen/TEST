@@ -29,6 +29,9 @@ void HT(vector<goods> hh) {
 	if (h == 4) {
 		system("cls");
 	}
+	else {
+		HT(hh);
+	}
 }
 
 #endif
