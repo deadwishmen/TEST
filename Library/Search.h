@@ -10,11 +10,11 @@ void TK(vector<goods> hh) {
 	int vitriTK = 12;
 nhaplai:
 	khung(0 + vitriTK, 0, 100, 2, 14);
-	vietchuoi(1 + vitriTK, 1, "TIM KIEM:", 206); vietchuoi(112 - 20, 4, "Nhan [ESC] de tro ve", 12);
+	vietchuoi(1 + vitriTK, 1, "TIM KIEM:", 206); vietchuoi(112 - 20, 4, "Nhap X Bam [ENTER] De Thoat", 12);
 	gotoxy(12 + vitriTK, 1); textcolor(14); fflush(stdin);
-	int h = keyboard();
+	/*int h = keyboard();*/
 	for (;;) {
-		if (h == 4) {
+		/*if (h == 4) {
 			system("cls");
 			break;
 		}
@@ -22,7 +22,14 @@ nhaplai:
 			vietchuoi(112 - 20, 4, "                       ", 12);
 			gotoxy(12 + vitriTK, 1); getline(cin, s);
 			textcolor(14);
+		}*/
+		textcolor(14);
+		getline(cin, s);
+		if (s == "X") {
+			system("cls");
+			return;
 		}
+		vietchuoi(112 - 20, 4, "                            ", 12);
 		int tam = tksanpham(hh, s);
 		if (tam == -1) {
 			vietchuoi(1 + vitriTK, 3, "Khong co san pham ton tai", 12);
@@ -32,6 +39,8 @@ nhaplai:
 		}
 		else {
 			int k = 0;
+			vietchuoi(112 - 20, 4, "Nhan [ESC] de tro ve", 12);
+			textcolor(14);
 			for (int i = 0; i < hh.size(); i++) {
 				if (hh[tam].name == hh[i].name) {
 
