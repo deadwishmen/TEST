@@ -7,7 +7,10 @@ using namespace std;
 	
 void HT(vector<goods> hh) {
 	int n = hh.size() + 3;
-	if (!hh.empty() && hh.size()<=1) {
+	if (hh[0].seri == "") {
+		hh.clear();
+	}
+	if (hh.empty()) {
 		vietchuoi(50, 1, "[Hien Tai Chua Co Hang Hoa]", 12);
 		Sleep(1500);
 		return;
