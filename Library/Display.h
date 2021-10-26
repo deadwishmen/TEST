@@ -10,6 +10,10 @@ void HT(vector<goods> hh) {
 	if (hh[0].seri == "") {
 		hh.clear();
 	}
+	int num = hh.size();
+	if (hh[num-1].seri == "") {
+		num--;
+	}
 	if (hh.empty()) {
 		vietchuoi(50, 1, "[Hien Tai Chua Co Hang Hoa]", 12);
 		Sleep(1500);
@@ -17,7 +21,7 @@ void HT(vector<goods> hh) {
 	}
 	vietchuoi(50, 1, "Nhan [ESC] de tro ve ", 12);
 	bangsanpham(0, 2, n);
-	for (int i = 0; i < hh.size(); i++) {
+	for (int i = 0; i < num; i++) {
 		int y = 5 + i;
 		gotoxy(2, y); cout << i + 1;
 		gotoxy(5, y); cout << hh[i].seri;
