@@ -81,8 +81,10 @@ void CHECKANDREPORT(vector<goods> hanghoa) {
 					gotoxy(88, 3 + n ); cout << x.orderDate[0]; gotoxy(90, 3+ n ); cout << "/";
 					gotoxy(91, 3 + n ); cout << x.orderDate[1]; gotoxy(93, 3+ n ); cout << "/";
 					gotoxy(94, 3 + n ); cout << x.orderDate[2];
-					vietchuoi(50, 22, "Da Dat Hang Thanh Cong", 2);
 					gotoxy(106, 3 + n); cout << x.total_money;
+					vietchuoi(50, 22, "Da Dat Hang Thanh Cong", 2);
+					Sleep(1500);
+					vietchuoi(50, 22, "                        ", 2);
 					n++;
 					break;
 				}
