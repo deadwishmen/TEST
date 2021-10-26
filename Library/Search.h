@@ -10,7 +10,7 @@ void TK(vector<goods> hh) {
 	int vitriTK = 12;
 nhaplai:
 	khung(0 + vitriTK, 0, 100, 2, 14);
-	vietchuoi(1 + vitriTK, 1, "TIM KIEM:", 206); vietchuoi(75 , 4, "Nhap Ky Tu \"X\" và an [ENTER] De Thoat", 12);
+	vietchuoi(1 + vitriTK, 1, "TIM KIEM:", 206); vietchuoi(75 , 4, "Nhap Ky Tu \"X\" Va An [ENTER] De Thoat", 12);
 	gotoxy(12 + vitriTK, 1); textcolor(14); fflush(stdin);
 	for (;;) {
 		textcolor(14);
