@@ -20,18 +20,20 @@ void CHECKANDREPORT(vector<goods> hanghoa) {
 		if (!check) {
 			getData(order);
 			int m = order.size()-1;
-			for (int j = 0; j < order[m].size(); j++) {
-				textcolor(3);
-				gotoxy(2, 3 + j); cout << order[m][j].number;
-				gotoxy(6, 3 + j); cout << order[m][j].seri;
-				gotoxy(17, 3 + j); cout << order[m][j].amount;
-				gotoxy(28, 3 + j); cout << order[m][j].customerName;
-				gotoxy(47, 3 + j); cout << order[m][j].address;
-				gotoxy(73, 3 + j); cout << order[m][j].phoneNumber; /*cout << m << j;*/
-				gotoxy(88, 3 + j); cout << order[m][j].orderDate[0]; gotoxy(90, 3 + j); cout << "/";
-				gotoxy(91, 3 + j); cout << order[m][j].orderDate[1]; gotoxy(93, 3 + j); cout << "/";
-				gotoxy(94, 3 + j); cout << order[m][j].orderDate[2];
-				gotoxy(106, 3 + j); cout << order[m][j].total_money;
+			if (m >= 0) {
+				for (int j = 0; j < order[m].size(); j++) {
+					textcolor(3);
+					gotoxy(2, 3 + j); cout << order[m][j].number;
+					gotoxy(6, 3 + j); cout << order[m][j].seri;
+					gotoxy(17, 3 + j); cout << order[m][j].amount;
+					gotoxy(28, 3 + j); cout << order[m][j].customerName;
+					gotoxy(47, 3 + j); cout << order[m][j].address;
+					gotoxy(73, 3 + j); cout << order[m][j].phoneNumber; /*cout << m << j;*/
+					gotoxy(88, 3 + j); cout << order[m][j].orderDate[0]; gotoxy(90, 3 + j); cout << "/";
+					gotoxy(91, 3 + j); cout << order[m][j].orderDate[1]; gotoxy(93, 3 + j); cout << "/";
+					gotoxy(94, 3 + j); cout << order[m][j].orderDate[2];
+					gotoxy(106, 3 + j); cout << order[m][j].total_money;
+				}
 			}
 		}
 		bool test = false;
